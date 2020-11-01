@@ -34,4 +34,3 @@ switch_32:
 	mov esp, ebp
 	
 	jmp start_32
-	

@@ -16,4 +16,3 @@ print_char:
 	popa
 	mov dh, 0x0
 	ret
-	
