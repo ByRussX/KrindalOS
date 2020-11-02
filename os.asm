@@ -13,8 +13,14 @@ start_16:
 	mov sp, ax
 
 start:
-	jmp switch
+	mov bx, switch_to_32b
+	call print_string
+	call switch
+	
+	jmp $
 
+
+[bits 32]
 start_32:
 	mov ebx, switch_completed
 	call print_string_pm
@@ -26,47 +32,12 @@ start_32:
 
 ;Importar
 %include "16/print/print_string.asm"
-
-%include "16/utils/sleep.asm"
-%include "16/utils/key_continue.asm"
-
-
 %include "switch_16_32/gdt.asm"
 %include "switch_16_32/switch.asm"
-
-
 %include "32/print/print_string_pm.asm"
 
 
-
-; ;Valores
-; FILE_COPY:
-	; db 0x0
-	
-; FILE_COPY_DIRECTION:
-	; dw 0x9000
-
-; NEW_LINE:
-    ; db 0xa, 0xd, 0x0
-
-; ;Mensajes
-; disk_success_message:
-    ; db "Bootloader cargado, disco leido y cargado en ", 0x0
-
-; disk_error_message:
-    ; db "Bootloader cargado, error al leer el disco", 0x0
-
-; start_message:
-	; db "Inicio de bootloader", 0x0
-
-; eof_message:
-    ; db "Final de bootloader alcanzado", 0x0
-	
-; reboot_message:
-	; db "Pulse una tecla para reiniciar", 0x0
-
 switch_to_32b db "Cambiando a modo protegido de 32 bits...", 0x0
-
 switch_completed db "Cambio a 32 bits realizado con exito!", 0x0
 
 
