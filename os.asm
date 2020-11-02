@@ -37,7 +37,7 @@ start_32:
 %include "32/print/print_string_pm.asm"
 
 
-switch_to_32b db "Cambiando a modo protegido de 32 bits...", 0x0
+switch_to_32b db "Cambiando a modo protegido de 32 bits", 0x0
 switch_completed db "Cambio a 32 bits realizado con exito!", 0x0
 
 

@@ -28,4 +28,4 @@ print_string_pm:
 		ret
 
 VIDEO_MEMORY_ equ 0xb8000
-WHITE_ON_BLACK_ equ 0x0f
+WHITE_ON_BLACK_ equ 0xf0
