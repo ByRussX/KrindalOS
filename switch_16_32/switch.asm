@@ -33,4 +33,4 @@ switch_32:
 	mov ebp, 0x90000
 	mov esp, ebp
 	
-	jmp start_32
+	call start_32

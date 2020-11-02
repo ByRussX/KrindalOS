@@ -7,6 +7,10 @@ start_16:
     mov ax, 0x0
     mov ds, ax
     mov es, ax
+	
+	mov ax, 0x9000
+	mov bp, ax
+	mov sp, ax
 
 start:
 	jmp switch
@@ -22,10 +26,6 @@ start_32:
 
 ;Importar
 %include "16/print/print_string.asm"
-;%include "16/print/print_char.asm"
-%include "16/print/print_hex.asm"
-
-;%include "16/disk/read_disk.asm"
 
 %include "16/utils/sleep.asm"
 %include "16/utils/key_continue.asm"
