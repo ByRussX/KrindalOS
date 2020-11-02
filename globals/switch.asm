@@ -1,12 +1,9 @@
-;Input: -
-;Output: -
-
 ;Switches from 16 bits RM to 32 bits PM
 
 ;16 bits Real Mode
 
 [bits 16]
-switch:
+switch_16to32:
 	
 	cli
 	
@@ -16,13 +13,13 @@ switch:
 	or eax, 0x1
 	mov cr0, eax
 	
-	jmp CODE_SEG:switch_32
+	jmp CODE_SEG:switch_in32
 	
 	jmp $
 
 
 [bits 32]
-switch_32:
+switch_in32:
 	mov ax, DATA_SEG
 	mov ds, ax
 	mov es, ax
@@ -33,4 +30,4 @@ switch_32:
 	mov ebp, 0x90000
 	mov esp, ebp
 	
-	call start_32
+	jmp start_32

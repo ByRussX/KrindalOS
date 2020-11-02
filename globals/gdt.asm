@@ -1,6 +1,3 @@
-;Input: -
-;Output: -
-
 ;Defines GDT and GDT descriptor for switching to 32 bits protected mode
 
 ;16 bits Real Mode

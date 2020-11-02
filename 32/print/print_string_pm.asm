@@ -1,4 +1,4 @@
-;Input: [EBX] = String to be printed
+;Input: [EBX] = String to be printed, AH = Special color/blink code
 ;Output: DH = 0x0 (no error)
 
 ;Prints out string pointed by EBX
@@ -14,7 +14,6 @@ print_string_pm:
 
 	.print_string_pm_loop:
 		mov al, [ebx]
-		mov ah, WHITE_ON_BLACK_
 		cmp al, 0x0
 		je .print_string_pm_done
 		mov [edx], ax
@@ -25,7 +24,7 @@ print_string_pm:
 	.print_string_pm_done:
 		popf
 		popa
+		mov dh, 0x0
 		ret
 
 VIDEO_MEMORY_ equ 0xb8000
-WHITE_ON_BLACK_ equ 0xf0

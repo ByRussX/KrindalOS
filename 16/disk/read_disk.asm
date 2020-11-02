@@ -17,16 +17,16 @@ read_disk:
     mov cl, 0x2
     int 0x13
 	pop dx
-    jc disk_error_
+    jc .disk_error
     cmp dh, al
-    jne disk_error_
+    jne .disk_error
     popf
 	popa
     mov dh, 0x0
     ret
 	
-disk_error_:
-	popf
-	popa
-	mov dh, 0x1
-	ret
+	.disk_error:
+		popf
+		popa
+		mov dh, 0x1
+		ret

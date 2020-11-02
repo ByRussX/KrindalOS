@@ -11,34 +11,34 @@ print_hex:
 	pushf
 	mov cx, 0x4
 
-char_loop_:
-	dec cx
-	mov ax, dx
-	shr dx, 0x4
-	and ax, 0xf
+	.char_loop:
+		dec cx
+		mov ax, dx
+		shr dx, 0x4
+		and ax, 0xf
 
-	mov bx, HEX_OUT_
-	add bx, 0x2
-	add bx, cx
-	cmp ax, 0xa
-	jl set_letter_
-	add byte [bx], 0x7
-	jl set_letter_
+		mov bx, HEX_OUT_
+		add bx, 0x2
+		add bx, cx
+		cmp ax, 0xa
+		jl .set_letter
+		add byte [bx], 0x7
+		jl .set_letter
 
-set_letter_:
-	add byte[bx], al
-	cmp cx, 0x0
-	je print_hex_done_
-	jmp char_loop_
+	.set_letter:
+		add byte[bx], al
+		cmp cx, 0x0
+		je .print_hex_done
+		jmp .char_loop
 
-print_hex_done_:
-	mov bx, HEX_OUT_
-	call print_string
+	.print_hex_done:
+		mov bx, HEX_OUT_
+		call print_string
 
-	popf
-	popa
-	mov dh, 0x0
-	ret
+		popf
+		popa
+		mov dh, 0x0
+		ret
 
 HEX_OUT_:
 	db "0x0000", 0x0
