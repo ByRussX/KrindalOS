@@ -22,5 +22,5 @@ print_string_loop_:
 print_string_end_:
 	popf
 	popa
-	mov dh, 0x0
+	xor dh, dh
 	ret

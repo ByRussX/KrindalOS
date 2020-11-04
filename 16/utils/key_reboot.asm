@@ -9,7 +9,7 @@
 key_reboot:
 	pusha
 	pushf
-	mov ax, 0x0
+	xor ax, ax
 	int 0x16
 	jmp 0xffff:0x0000
 	popf

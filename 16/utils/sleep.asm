@@ -13,5 +13,5 @@ sleep:
 	int 0x15
 	popf
 	popa
-	mov dh, 0x0
+	xor dh, dh
 	ret

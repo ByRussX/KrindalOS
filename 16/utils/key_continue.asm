@@ -10,9 +10,9 @@ key_continue:
 	pusha
 	pushf
 	call print_string
-	mov ax, 0x0
+	xor ax, ax
 	int 0x16
 	popf
 	popa
-	mov dh, 0x0
+	xor dh, dh
 	ret

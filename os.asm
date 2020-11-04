@@ -2,7 +2,7 @@
 
 [bits 16]
 init:
-	mov ax, 0x0
+	xor ax, ax
 	mov ds, ax
 	mov es, ax
 	
@@ -25,7 +25,8 @@ start_16:
 [bits 32]
 start_32:
 
-	mov ah, 0x0f
+	mov cl, 0x0f
+	xor al, al
 	mov ebx, switch_completed
 	call print_string_pm
 	
@@ -36,7 +37,7 @@ start_32:
 
 start_variables:
 	switch_to_32b db "Cambiando a modo protegido de 32 bits", 0x0
-	switch_completed db "Cambio a 32 bits realizado con exito!", 0x0
+	switch_completed db "0123456789qwertyuiopasdfg", 0x0
 end_variables:
 
 

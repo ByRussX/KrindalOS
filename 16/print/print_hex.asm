@@ -37,7 +37,7 @@ print_hex:
 
 		popf
 		popa
-		mov dh, 0x0
+		xor dh, dh
 		ret
 
 HEX_OUT_:

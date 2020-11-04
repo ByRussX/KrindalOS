@@ -14,5 +14,5 @@ print_char:
 	int 0x10
 	popf
 	popa
-	mov dh, 0x0
+	xor dh, dh
 	ret

@@ -12,8 +12,8 @@ read_disk:
     push dx
     mov ah, 0x2
     mov al, dh
-    mov ch, 0x0
-    mov dh, 0x0
+    xor ch, ch
+    xor dh, dh
     mov cl, 0x2
     int 0x13
 	pop dx
@@ -22,7 +22,7 @@ read_disk:
     jne .disk_error
     popf
 	popa
-    mov dh, 0x0
+    xor dh, dh
     ret
 	
 	.disk_error:
