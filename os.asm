@@ -5,6 +5,7 @@ init:
 	xor ax, ax
 	mov ds, ax
 	mov es, ax
+	mov ss, ax
 	
 	mov ax, 0x9000
 	mov bp, ax
