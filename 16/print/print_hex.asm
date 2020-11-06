@@ -33,7 +33,7 @@ print_hex:
 
 	.print_hex_done:
 		mov bx, HEX_OUT_
-		call print_string
+		call print_string_rm
 
 		popf
 		popa

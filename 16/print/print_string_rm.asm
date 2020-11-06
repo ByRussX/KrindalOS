@@ -6,7 +6,7 @@
 ;16 bits Real Mode
 
 [bits 16]
-print_string:
+print_string_rm:
     pusha
 	pushf
     mov ah, 0xe

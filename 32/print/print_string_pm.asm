@@ -5,16 +5,13 @@
 
 ;32 bits Protected Mode
 
-
 [bits 32]
 print_string_pm:
 	pusha
 	pushf
 	
 	mov edx, VIDEO_MEMORY_
-	push ax
-	xor eax, eax
-	pop ax
+	and eax, 0xffff
 	shl eax, 0x1
 	add edx, eax
 
