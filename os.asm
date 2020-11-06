@@ -20,14 +20,14 @@ init:
 
 [bits 16]
 start_16:
-	mov bx, RM_MSG
-	call print_string_rm
+	; mov bx, RM_MSG
+	; call print_string_rm
 	
-	mov bx, NL
-	call print_string_rm
+	; mov bx, NL
+	; call print_string_rm
 	
-	mov dl, [DRIVE]
 	mov bx, KERN_OFFSET
+	mov dl, [DRIVE]
 	mov dh, 0x1
 	
 	call read_disk
@@ -48,13 +48,21 @@ start_16:
 		
 	.success:
 		
-		mov bx, KERN_MSG
-		call print_string_rm
+		; mov bx, KERN_MSG
+		; call print_string_rm
 		
-		mov bx, NL
-		call print_string_rm
+		; mov dx, es
+		; call print_hex
+
+		; mov dl, ':'
+		; call print_char
+
+		; mov dx, KERN_OFFSET
+		; call print_hex
 		
-	
+		; mov bx, NL
+		; call print_string_rm
+
 		jmp switch_16to32
 	
 	jmp $
@@ -63,17 +71,15 @@ start_16:
 [bits 32]
 start_32:
 
-	mov cl, 0x0f
-	xor al, al
-	mov ebx, PM_MSG
-	call print_string_pm
+	; mov cl, 0x0f
+	; xor al, al
 	
-	mov ebx, NL
-	call print_string_rm
+	; mov ebx, PM_MSG
+	; call print_string_pm
 	
+	call KERN_OFFSET
 	
 	jmp $
-
 
 ;Variables y constantes
 
@@ -86,7 +92,7 @@ start_variables:
 	
 	NL db 0xa, 0xd, 0x0
 	
-	KERN_OFFSET db 0x10, 0x00
+	KERN_OFFSET equ 0x1000
 end_variables:
 
 
@@ -98,6 +104,7 @@ start_includes:
 	
 	%include "16/print/print_string_rm.asm"
 	%include "16/print/print_char.asm"
+	%include "16/print/print_hex.asm"
 	
 	%include "16/utils/clear_screen.asm"
 	%include "16/disk/read_disk.asm"
@@ -111,6 +118,7 @@ times 510 -($ - $$) db 0x0
 dw 0xaa55
 
 ;Crear más sectores en el disco
+KERNEL:
 db 0x55, 0x89, 0xE5, 0x83, 0xEC, 0x10, 0xC7, 0x45, 0xFC, 0x00, 0x80, 0x0B, 0x00, 0x8B, 0x45, 0xFC, 0xC6, 0x00, 0x58, 0x90, 0xC9, 0xC3, 0x90, 0x90, 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00
 times 512 - 28 db 0x90
 
