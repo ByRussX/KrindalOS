@@ -1,4 +1,4 @@
-# ByOS
+﻿# ByOS
 A toy OS developed in assembly and C
 
 # Tools needed/used to automatize building
@@ -11,10 +11,6 @@ A toy OS developed in assembly and C
 ·NDISASM 2.15.05 (for printing output only)
 
 ·GNU OBJCOPY
-
-·Python 3.x
-
-·GETRAW.PY script (included)
 
 ·QEMU QEMU-SYSTEM-I386/QEMU-SYSTEM-x86_64 (for emulation only)
 
