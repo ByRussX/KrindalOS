@@ -4,6 +4,11 @@ OBJCOPYFLAGS = -O binary -j .text
 
 CLEANFILENAMES = boot.bin kernel.bin kernel.o
 
+all:
+	make build
+	make clean
+	make run
+
 os.img : boot.bin kernel.bin
 	cat boot.bin kernel.bin > os.img
 boot.bin : boot.asm
@@ -21,8 +26,3 @@ clean:
 	
 run:
 	qemu-system-i386 os.img
-
-all:
-	make build
-	make clean
-	make run
