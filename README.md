@@ -23,6 +23,8 @@ For Windows users, `MinGW`, `NASM` and `QEMU` (just for emulation, not obligator
 # How to build?
 Run `make build` to create the `os.img` file, then `make clean` to clean not-needed bin files, and then `make run` to run `os.img` via `qemu-system-i386`. You can just run `make`or `make all`, which is equivalent to `make build`, `make clean` and `make run`, in that order.
 
+If you are on Windows, just run `makefile` on the terminal.
+
 # License
 All the code is licensed under the GNU Public License v3.0 
 https://www.gnu.org/licenses/gpl-3.0.html
