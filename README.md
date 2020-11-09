@@ -25,6 +25,8 @@ Run `make build` to create the `os.img` file, then `make clean` to clean not-nee
 
 If you are on Windows, just run `makefile` on the terminal.
 
+ATENTION: This booloader will only compile and run on computers having `x86` architecture. If you try it on other architecture (e.g `ARM`), the result is unexpected, at least from the part of the kernel compiling.
+
 # License
 All the code is licensed under the GNU Public License v3.0 
 https://www.gnu.org/licenses/gpl-3.0.html
