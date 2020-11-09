@@ -21,7 +21,7 @@ For Linux users, is just needed to have `NASM` (https://www.nasm.us/) and `QEMU`
 For Windows users, apart of the Linux requisites, `binutils` and `coreutils` are required. `Binutils` and `GCC` can be obtained by installing `MinGW` (http://www.mingw.org/). `QEMU` and `NASM` can be obtained from the same sources as Linux, and `coreutils`, with the libraries (that come apart), can be downloaded from GNUWin32 (http://gnuwin32.sourceforge.net/packages/coreutils.htm).
 
 # How to build?
-Run `make` to create the `os.img` file, then `make clean` to clean not-needed bin files, and then `make run` to run `os.img` via `qemu-system-i386`.
+Run `make build` to create the `os.img` file, then `make clean` to clean not-needed bin files, and then `make run` to run `os.img` via `qemu-system-i386`. You can just run `make`or `make all`, which is equivalent to `make build`, `make clean` and `make run`, in that order.
 
 # License
 All the code is licensed under the GNU Public License v3.0 
