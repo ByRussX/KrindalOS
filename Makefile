@@ -1,6 +1,6 @@
-GCCFLAGS = -Wall -pedantic-errors -nostdlib -Wl,-Ttext=0x0
+GCCFLAGS = -ffreestanding -c
+LDFLAGS = -Ttext 0x0 --oformat binary
 NASMFLAGS = -f bin
-OBJCOPYFLAGS = -O binary -j .text
 
 CLEANFILENAMES = boot.bin kernel.bin kernel.o
 
@@ -14,7 +14,7 @@ os.img : boot.bin kernel.bin
 boot.bin : boot.asm
 	nasm $< $(NASMFLAGS) -o $@
 kernel.bin : kernel.o
-	objcopy $(OBJCOPYFLAGS) $< $@
+	ld $< $(LDFLAGS) -o $@
 kernel.o : kernel.c
 	gcc $< $(GCCFLAGS) -o $@
 	
