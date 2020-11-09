@@ -1,5 +1,5 @@
 ﻿# ByOS
-A toy OS developed in assembly and C
+Toy operative system for x86 coded in Assembly and C.
 
 # How is this working?
 `boot.asm` -> Bootloader
