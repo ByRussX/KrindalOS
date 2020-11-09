@@ -22,3 +22,7 @@ For Windows users, apart of the Linux requisites, `binutils` and `coreutils` are
 
 # How to build?
 Run `make` to create the `os.img` file, then `make clear` to clear not-needed bin files, and then `make run` to run `os.img` via `qemu-system-i386`.
+
+# License
+All the code is licensed under the GNU Public License v3.0 
+https://www.gnu.org/licenses/gpl-3.0.html
