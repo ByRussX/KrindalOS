@@ -1,6 +1,6 @@
 void start(void) {
 	char * video_memory = (char *) 0xb8000;
-	char message[] = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+	char message[] = "Hello World!";
 	
 	for (int i = 0; message[i / 2] != 0; i++)
 	{
