@@ -14,7 +14,7 @@ os.img : boot.bin kernel.bin
 boot.bin : boot.asm
 	nasm $< $(NASMFLAGS) -o $@
 kernel.bin : kernel.o
-	objcopy $(OBJCOPYFLAGS) #< $@
+	objcopy $(OBJCOPYFLAGS) $< $@
 kernel.o : kernel.c
 	gcc $< $(GCCFLAGS) -o $@
 	
