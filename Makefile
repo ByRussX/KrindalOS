@@ -11,11 +11,11 @@ all:
 
 os.img : boot.bin kernel.bin
 	cat boot.bin kernel.bin > os.img
-boot.bin : boot.asm
+boot.bin : boot/boot.asm
 	nasm $< $(NASMFLAGS) -o $@
 kernel.bin : kernel.o
 	objcopy $(OBJCOPYFLAGS) $< $@
-kernel.o : kernel.c
+kernel.o : kernel/kernel.c
 	gcc $< $(GCCFLAGS) -o $@
 	
 build:

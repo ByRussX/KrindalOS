@@ -2,17 +2,17 @@
 Toy operative system for x86 coded in Assembly and C.
 
 # How is this working?
-`boot.asm` -> Bootloader
+`boot/boot.asm` -> Bootloader
 
-`kernel.c` -> Kernel
+`boot/kernel.c` -> Kernel
 
-`16/` -> Libraries and functions for 16 bits Real Mode.
+`boot/16/` -> Libraries and functions for 16 bits Real Mode.
 
-`32/` -> Libraries and functions for 32 bits Protected Mode.
+`boot/32/` -> Libraries and functions for 32 bits Protected Mode.
 
-`globals/` -> Libraries to switch from 16 bits Real Mode to 32 bits Protected Mode.
+`boot/globals/` -> Libraries to switch from 16 bits Real Mode to 32 bits Protected Mode.
 
-The `boot.asm` file loads `kernel.bin` (compiled from `kernel.c`) into memory, then jumps to it and starts executing code. The folders `16/` and `32/` contain some files not used in the bootloader, but they can be used in other projects.
+The `boot.bin` (assembled from `boot/boot.asm`) file loads `kernel.bin` (compiled from boot/`kernel.c`) into memory, then jumps to it and starts executing code. This two files are joined together into `os.img`. The folders `boot/16/` and `boot/32/` contain some files not used in the bootloader, but they can be used in other projects. The folder `drivers/` hasn't been used yet.
 
 # Linux
 For Linux users, is just needed to have `NASM` (https://www.nasm.us/) and `QEMU` (just for emulation, not obligatory) (https://www.qemu.org/); since all `coreutils` and `binutils` are already downloaded.

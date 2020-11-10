@@ -99,17 +99,17 @@ end_variables:
 ;Importar
 
 start_includes:
-	%include "globals/gdt.asm"
-	%include "globals/switch.asm"
+	%include "boot/globals/gdt.asm"
+	%include "boot/globals/switch.asm"
 	
-	%include "16/print/print_string_rm.asm"
-	%include "16/print/print_char.asm"
-	%include "16/print/print_hex.asm"
+	%include "boot/16/print/print_string_rm.asm"
+	%include "boot/16/print/print_char.asm"
+	%include "boot/16/print/print_hex.asm"
 	
-	%include "16/utils/clear_screen.asm"
-	%include "16/disk/read_disk.asm"
+	%include "boot/16/utils/clear_screen.asm"
+	%include "boot/16/disk/read_disk.asm"
 	
-	%include "32/print/print_string_pm.asm"
+	%include "boot/32/print/print_string_pm.asm"
 end_includes:
 
 
