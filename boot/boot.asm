@@ -85,14 +85,11 @@ start_32:
 
 start_variables:
 	DRIVE db 0x0
-	RM_MSG db "Modo Real de 16 bits", 0x0
-	PM_MSG db "Modo Protegido de 32 bits", 0x0
-	KERN_MSG db "Kernel cargado en ", 0x0
 	KERN_MSG_ERR db "Error al cargar el kernel", 0x0
 	
 	NL db 0xa, 0xd, 0x0
 	
-	KERN_OFFSET equ 0x1000
+	KERN_OFFSET equ 0x8000
 end_variables:
 
 
@@ -111,7 +108,6 @@ start_includes:
 	
 	%include "boot/32/print/print_string_pm.asm"
 end_includes:
-
 
 ;Rellenar el sector de arranque
 times 510 -($ - $$) db 0x0
