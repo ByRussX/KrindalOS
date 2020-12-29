@@ -113,6 +113,6 @@ end_includes:
 times 510 -($ - $$) db 0x0
 dw 0xaa55
 
-;Crear m·s sectores en el disco
+;Crear m√°s sectores en el disco
 
 eof:
