@@ -1,6 +1,8 @@
 ﻿# ByOS
 Toy operative system for x86 coded in Assembly and C.
 
+![alt text](https://github.com/ByRussX/KrindalOS/res/logo.png)
+
 # How is this working?
 `boot/boot.asm` -> Bootloader
 
