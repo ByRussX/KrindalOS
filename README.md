@@ -29,8 +29,6 @@ Good luck
 # How to build?
 Run `make build` to create the `os.img` file, then `make clean` to clean not-needed bin files, and then `make run` to run `os.img` via `qemu-system-i386`. You can just run `make`or `make all`, which is equivalent to `make build`, `make clean` and `make run`, in that order.
 
-If you are on Windows, just type `mak` on the terminal.
-
 ATENTION: This booloader will only compile and run on computers having `x86` architecture. If you try it on other architecture (e.g `ARM`), the result is unexpected, at least from the part of the kernel compiling.
 
 # License
