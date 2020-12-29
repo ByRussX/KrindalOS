@@ -21,7 +21,9 @@ For Linux users, is just needed to have `NASM` (https://www.nasm.us/) and `QEMU`
 
 # Windows
 Step 1º: Change to Linux
+
 Step 2º: In case step 1 didn't work, try again :)
+
 Good luck
 
 # How to build?
